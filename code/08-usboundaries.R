@@ -52,4 +52,7 @@ facet_anim = tm_shape(usbj, bbox = bb_contig, projection = 2163) +
   tm_facets(free.scales.fill = FALSE, ncol = 1, nrow = 1, along = "year") +
   tm_shape(usa_union) + tm_borders(lwd = 2) +
   tm_layout(legend.position = c("left", "bottom"))
-tmap_animation(tm = facet_anim, filename = "09-us_pop.gif")
+# tmap_animation(tm = facet_anim, filename = "09-us_pop.gif") this code will return a error:Error in grDevices::png(..., width = width, height = height, res = dpi,  : 
+#  invalid quartz() device size
+# replace the original code with the following code: 
+tmap_animation(tm = facet_anim, filename = "09-us_pop.gif",width = 1600)
